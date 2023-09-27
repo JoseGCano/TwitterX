@@ -1,8 +1,8 @@
 
 
-export const PrimaryButton =({title, fill})=>{
+export const PrimaryButton =({title, fill, action})=>{
     return(
-        <button style={{ color: fill? "white" : "rgb(29, 155, 240)", backgroundColor: fill? "rgb(29, 155, 240)" : "white" }}>
+        <button onClick={action} style={{ color: fill? "white" : "rgb(29, 155, 240)", backgroundColor: fill? "rgb(29, 155, 240)" : "white" }}>
             {title}
         </button>
     )
