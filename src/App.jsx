@@ -10,6 +10,7 @@ import { BackGroundChange } from './components/backgroundChange'
 import { Expand } from './components/Expand'
 import { PrimaryButton } from './components/PrimaryButton'
 import { ListDinamica } from './ListaDinamica'
+import { EventosExercise } from './components/eventos'
 
 function App() {
   const [state, setState] = useState(false)
@@ -29,7 +30,8 @@ function App() {
         <PrimaryButton title={"contract"} fill action={(state)=>setState(!state)}/>
      
     </Expand> */}
-    <ListDinamica/>
+    {/* <ListDinamica/> */}
+    <EventosExercise/>
     </div>
     
   )
