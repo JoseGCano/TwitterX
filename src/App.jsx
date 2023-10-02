@@ -11,9 +11,24 @@ import { Expand } from './components/Expand'
 import { PrimaryButton } from './components/PrimaryButton'
 import { ListDinamica } from './ListaDinamica'
 import { EventosExercise } from './components/eventos'
-
+import { Loader } from './components/loader'
 function App() {
   const [state, setState] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+    const getLoader = async ()=>{
+    setLoading(!loading)
+
+    console.log("Aplicando loading")
+
+    setTimeout(()=>{
+      setLoading(prevLoad => !prevLoad)
+      console.log("cerrando loading")
+    }, 3000)
+    
+    
+  }
+
 
 
   return (
@@ -31,7 +46,9 @@ function App() {
      
     </Expand> */}
     {/* <ListDinamica/> */}
-    <EventosExercise/>
+    {loading ? <Loader />: null}
+    <PrimaryButton action={getLoader} fill title={"Púlsame Loader"}/>
+    {/* <EventosExercise setLoading={setLoading} loading={loading}/> */}
     </div>
     
   )
